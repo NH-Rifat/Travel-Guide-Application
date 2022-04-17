@@ -1,4 +1,5 @@
 import Home from "./pages/Home/Home";
+import MoreInfo from "./pages/Home/MoreInfo/MoreInfo";
 import Header from "./pages/shared/Header/Header";
 
 

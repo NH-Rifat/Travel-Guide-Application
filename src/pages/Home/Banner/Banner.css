@@ -1,3 +1,7 @@
+
+.banner{
+  margin-bottom: 18%;
+}
 .banner-img img{
   position: absolute;
   top: 0px;
@@ -8,7 +12,7 @@
   object-position: 83%;
 }
 .main{
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   position: relative;
   top: 150px;
@@ -58,7 +62,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 25px;
-  margin-right: 150px;
 }
 .info p{
   margin-right: 10px;

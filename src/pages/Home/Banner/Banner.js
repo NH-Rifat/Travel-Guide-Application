@@ -1,8 +1,8 @@
 import React from 'react';
 import './Banner.css';
 
-import home1 from '../../images/home1.jpg';
-import home2 from '../../images/home2.jpg';
+import home1 from '../../../images/home1.jpg';
+import home2 from '../../../images/home2.jpg';
 
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FaInstagramSquare } from 'react-icons/fa';
@@ -12,7 +12,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Banner = () => {
   return (
-    <div>
+    <div className='banner'>
       <div className='banner-img'>
         <img src={home1} alt='' />
       </div>
@@ -41,18 +41,21 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="visit-place">
-            <div className="info">
-              <p>5 best places <br />to Visit</p>
-              <div className="more">
+          <div className='visit-place'>
+            <div className='info'>
+              <p>
+                5 best places <br />
+                to Visit
+              </p>
+              <div className='more'>
                 <p>More</p>
-                <div className="arrow">
-                <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                <div className='arrow'>
+                  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                 </div>
               </div>
             </div>
-            <div className="visit-img">
-            <img src={home2} alt="" />
+            <div className='visit-img'>
+              <img src={home2} alt='' />
             </div>
           </div>
         </div>
