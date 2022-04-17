@@ -39,6 +39,7 @@ button {
   left: 0;
   z-index: 1234;
   /* background-color: transparent; */
+  background-color: white;
   box-shadow: 0 0 4px rgba(14, 55, 63, 0.15);
 }
 
@@ -46,7 +47,7 @@ button {
 .nav {
   height: 70px;
   display: flex;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;

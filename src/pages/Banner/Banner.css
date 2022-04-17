@@ -1,0 +1,83 @@
+.banner-img img{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  object-position: 83%;
+}
+.main{
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+}
+.main p{
+  font-size: 21px;
+  color: white;
+  margin-bottom: 20px;
+}
+.main h1{
+  color: white;
+  font-size: 65px;
+  margin-bottom: 20px;
+}
+.explore_visit-place{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.explore_visit-place .explore{
+  margin-top:40px;
+  /* margin-bottom: 150px; */
+}
+.explore_visit-place .explore a{
+  background-color: rgb(20, 80, 92);
+  color: white;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+.social{
+  display: flex;
+  color: white;
+}
+.facebook,.instagram,.twitter{
+  margin-top: 110px;
+  font-size: 20px;
+}
+.social .instagram,.twitter{
+  margin-left: 20px;
+}
+
+.visit-place{
+  background-color: rgb(20, 80, 92);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 25px;
+  margin-right: 150px;
+}
+.info p{
+  margin-right: 10px;
+  font-size: 18px;
+}
+.more{
+  display: flex;
+  position: relative;
+}
+.more p{
+  font-size: 16px;
+}
+.more .arrow{
+  color: white;
+  position: absolute;
+  margin-left: 39px;
+  top: 2px;
+}
+
+.visit-img img{
+  width: 150px;
+}
