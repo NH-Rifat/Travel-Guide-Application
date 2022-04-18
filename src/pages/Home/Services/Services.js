@@ -15,48 +15,48 @@ let allServices=[
     img:image1,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
     price:90,
-    previousPrice:120,
+    previousPrice:130,
     name:'Mumbai'
   },
   {
     id:2,
     img:image2,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
-    price:90,
-    previousPrice:120,
-    name:'Mumbai'
+    price:110,
+    previousPrice:150,
+    name:'Hawaii'
   },
   {
     id:3,
     img:image3,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
-    price:90,
-    previousPrice:120,
-    name:'Mumbai'
+    price:80,
+    previousPrice:110,
+    name:'Sydney'
   },
   {
     id:4,
     img:image4,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
-    price:90,
-    previousPrice:120,
-    name:'Mumbai'
+    price:60,
+    previousPrice:90,
+    name:'Paris'
   },
   {
     id:5,
     img:image5,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
-    price:90,
+    price:70,
     previousPrice:120,
-    name:'Mumbai'
+    name:'Tokyo'
   },
   {
     id:6,
     img:image6,
     des:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nam!',
-    price:90,
-    previousPrice:120,
-    name:'Mumbai'
+    price:50,
+    previousPrice:75,
+    name:'Eypt'
   }
 ]
 

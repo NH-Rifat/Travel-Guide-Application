@@ -24,7 +24,7 @@ const Service = ({service}) => {
         </div>
         <div className='price'>
           {' '}
-          {price}<span>{previousPrice}</span>{' '}
+          {price}$ <span>{previousPrice}$</span>{' '}
         </div>
         <a href='#' className='btn'>
           Book now

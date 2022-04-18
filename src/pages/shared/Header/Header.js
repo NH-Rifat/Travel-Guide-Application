@@ -1,10 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-import { FaFacebookSquare, FaInstagram, FaTwitter } from 'react-icons/fa';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -19,24 +16,21 @@ const Header = () => {
           <div className='nav__menu'>
             <ul className='nav__list'>
               <li className='nav__item'>
-                <a href='#home' className='nav__link active-link'>
-                  Home
-                </a>
-              </li>
-              <li className='nav__item'>
-                <a href='#about' className='nav__link'>
-                  About
-                </a>
-              </li>
-              <li className='nav__item'>
-                <a href='#discover' className='nav__link'>
-                  Discover
-                </a>
+              <Link to="/home">Home</Link>
               </li>
               <li className='nav__item'>
                 <a href='#place' className='nav__link'>
-                  Places
+                  Service
                 </a>
+              </li>
+              <li className='nav__item'>
+                <Link to="/about">About</Link>
+              </li>
+              <li className='nav__item'>
+              <Link to="/blog">Blog</Link>
+              </li>
+              <li className='nav__item'>
+              <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
