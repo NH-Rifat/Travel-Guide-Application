@@ -1,12 +1,52 @@
 import React from 'react';
+import './Blog.css';
 
 const Blog = () => {
   return (
-    <div>
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sunt unde quasi! Nam dolorem itaque in nemo veniam voluptate eligendi voluptatum iste quaerat? Voluptates laudantium reiciendis aperiam modi facilis expedita.
-      Asperiores dignissimos animi amet eligendi et earum, dicta cum minus nulla beatae aliquid dolorum quos vitae, facilis alias, perferendis reiciendis sint libero! Cupiditate architecto facilis quae numquam eligendi praesentium quas!
-      Corporis cumque atque maiores aliquam quo nulla dolore, minus repudiandae natus soluta, deleniti necessitatibus voluptas mollitia eum ratione quia odio voluptatibus laboriosam nobis officiis! Ad dolore quasi ex harum rem.
-      Ipsam odio delectus blanditiis quas deleniti ipsum? Culpa ex possimus veniam dignissimos earum impedit temporibus consectetur, rem excepturi accusamus repudiandae fugiat laudantium blanditiis reiciendis sit, tempore ipsum mollitia asperiores! Commodi.</h1>
+    <div className='Blog-section'>
+      <div className='semantic_context'>
+        <div className='semantic_tag'>
+          <h2>Difference between authorization and authentication</h2>
+          <p>
+            Authentication in the form of a key. The lock on the door only
+            grants access to someone with the correct key in much the same way
+            that a system only grants access to users who have the correct
+            credentials. Authorization, in the form of permissions. Once inside,
+            the person has the authorization to access the kitchen and open the
+            cupboard that holds the pet food. The person may not have permission
+            to go into the bedroom for a quick nap.
+          </p>
+        </div>
+        <div className='context_api'>
+          <h2>
+            Why are you using firebase? What other options do you have to
+            implement authentication?
+          </h2>
+          <p>
+            FirebaseAuthentication makes it easier to get your users signed-in
+            without having to understand the complexities behind implementing
+            your own authentication system. To sign a user into your app, you
+            first get authentication credentials from the user. These
+            credentials can be the user's email address and password, or an
+            OAuth token from a federated identity provider. Then, you pass these
+            credentials to the Firebase Authentication SDK.
+          </p>
+        </div>
+        <div className='context_api'>
+          <h2>
+            What other services does firebase provide other than authentication?
+          </h2>
+          <p>
+            Firebase Authentication integrates tightly with other Firebase
+            services, and it leverages industry standards like OAuth 2.0 and
+            OpenID Connect, so it can be easily integrated with your custom
+            backend. Basically ,The Firebase Authentication SDK provides methods
+            that allow users to sign in with their Google, Facebook, Twitter,
+            and GitHub accounts. Authenticate users by sending SMS messages to
+            their phones.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
