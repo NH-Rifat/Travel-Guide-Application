@@ -1,40 +1,60 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Login.css';
 
 import home1 from '../../../images/home1.jpg';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Loading/Loading';
 
 const Login = () => {
-  const [errorMsg, setErrorMsg] = useState('');
-  const [email,setEmail]=useState('')
-  const [password,setPassword]=useState('')
-
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
   const navigate = useNavigate();
   const location = useLocation();
 
-  let from = location.state?.pathname || '/';
+  let from = location.state?.from?.pathname || '/';
+  let errorElement;
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   if (user) {
     navigate(from, { replace: true });
   }
+  // if (loading || sending) {
+  //   return <Loading></Loading>
+  // }
 
-  const handleEmail=()=>{
-    setEmail(email);
-  }
-  const handlePassword=()=>{
-    setPassword(password);
+  if (error) {
+    errorElement = <p className='text-danger'>Error: {error?.message}</p>;
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
     signInWithEmailAndPassword(email, password);
-    console.log('login');
+  };
+
+  
+
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast('Sent email');
+    } else {
+      toast('please sent Email');
+    }
   };
 
   return (
@@ -49,11 +69,14 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className='inputBx'>
                 <span>Email</span>
-                <input onBlur={handleEmail} type='email' name='name' />
+                <input ref={emailRef} type='email' name='name' />
               </div>
               <div className='inputBx'>
                 <span>Password</span>
-                <input onBlur={handlePassword} type='password' name='password' />
+                <input ref={passwordRef} type='password' name='password' />
+              </div>
+              <div className='inputBx'>
+                <p>{errorElement}</p>
               </div>
               <div className='inputBx'>
                 <input type='submit' value='Sign in' />
@@ -63,6 +86,14 @@ const Login = () => {
                   Don't have an account? <Link to='/register'>Sign up</Link>
                 </p>
               </div>
+              <div className='inputBx'>
+                <p>
+                  Forget Password?
+                  <button className='reset' onClick={resetPassword}>
+                    Reset Password
+                  </button>
+                </p>
+              </div>
             </form>
             <div className='or'>
               <div className='left'></div>
@@ -70,6 +101,7 @@ const Login = () => {
               <div className='right'></div>
             </div>
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
           </div>
         </div>
       </section>

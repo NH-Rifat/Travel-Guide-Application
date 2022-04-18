@@ -1,12 +1,48 @@
 import React from 'react';
+import './Checkout.css';
+import bookImg from '../../images/book-img.svg';
 
 const Checkout = () => {
   return (
-    <div>
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad dolores enim culpa repellat temporibus optio in obcaecati quia fugiat. Voluptate aliquid temporibus ipsa aut saepe consequatur blanditiis in nisi.
-      Ullam officia sed quis. Beatae pariatur id atque autem! Quis, eius. Autem, laborum deleniti ipsum aperiam labore excepturi. Ab incidunt totam nesciunt eveniet inventore tempora cupiditate asperiores vel in quae?
-      Harum laudantium blanditiis atque voluptatem modi eos fugit. Dignissimos, tempore doloremque nam assumenda commodi animi vel possimus excepturi earum! Nesciunt temporibus optio ad voluptatem laborum architecto qui modi eligendi ipsum!
-      Aliquam fugiat, consectetur voluptas soluta tenetur alias eligendi! Voluptatum, animi. Voluptatibus, sapiente nam pariatur ullam asperiores harum perferendis dignissimos cum voluptatum numquam aspernatur quae modi facere quos alias nemo laboriosam.</h1>
+    <div className='book-container'>
+      <section class='book'>
+        <h1 class='heading'>
+          <span>b</span>
+          <span>o</span>
+          <span>o</span>
+          <span>k</span>
+          <span class='space'></span>
+          <span>n</span>
+          <span>o</span>
+          <span>w</span>
+        </h1>
+
+        <div class='row'>
+          <div class='image'>
+            <img src={bookImg} alt='' />
+          </div>
+
+          <form action=''>
+            <div class='inputBox'>
+              <h3>where to</h3>
+              <input type='text' placeholder='place name' />
+            </div>
+            <div class='inputBox'>
+              <h3>how many</h3>
+              <input type='number' placeholder='number of guests' />
+            </div>
+            <div class='inputBox'>
+              <h3>arrivals</h3>
+              <input type='date' />
+            </div>
+            <div class='inputBox'>
+              <h3>leaving</h3>
+              <input type='date' />
+            </div>
+            <input type='submit' class='btn' value='Proceed checkout' />
+          </form>
+        </div>
+      </section>
     </div>
   );
 };

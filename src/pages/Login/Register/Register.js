@@ -5,18 +5,23 @@ import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import home1 from '../../../images/home1.jpg';
 import auth from '../../../firebase.init';
+import Loading from '../../Loading/Loading';
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
 
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const navigate = useNavigate();
 
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
   const handleRegister = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
+    // const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     //const agree = event.target.terms.checked;
@@ -24,6 +29,7 @@ const Register = () => {
     createUserWithEmailAndPassword(email, password);
     navigate('/home');
   };
+
   return (
     <div className='login-container'>
       <section>
@@ -48,15 +54,17 @@ const Register = () => {
               </div>
               <div className='agree'>
                 <label htmlFor='checkbox'>
-                  <input type='checkbox' name='terms' id='checkbox' onClick={()=>setAgree(!agree)}/>
+                  <input
+                    type='checkbox'
+                    name='terms'
+                    id='checkbox'
+                    onClick={() => setAgree(!agree)}
+                  />
                   Agree terms and conditions
                 </label>
               </div>
               <div className='inputBx'>
-                <input 
-                disabled={!agree}
-                type='submit' 
-                value='Sign up' />
+                <input disabled={!agree} type='submit' value='Sign up' />
               </div>
               <div className='inputBx'>
                 <p>
@@ -73,4 +81,3 @@ const Register = () => {
 };
 
 export default Register;
-
