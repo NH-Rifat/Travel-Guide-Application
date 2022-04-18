@@ -1,37 +1,30 @@
+
 .book-container{
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 80px;
 }
-.book{
-  margin-top: 50px;
-}
-.book .row{
+.booking{
   display: flex;
   flex-wrap: wrap;
   gap:1.5rem;
   align-items: center;
-}
-.book .row .image{
-  flex:1 1 30rem;
+  /* justify-content: center; */
 }
 
-.book .row .image img{
-  width:50%;
+.book-img img{
+  width: 600px;
 }
-
-.book .row form{
-  flex:1 1 20rem;
+.form-container form{
+  flex:1 1 40rem;
   padding:2rem;
   box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
   border-radius: .5rem;
 }
-
-.book .row form .inputBox{
+.form-container form .info{
   padding:.5rem 0;
 }
-
-.book .row form .inputBox input{
+.form-container form .info input{
   width:100%;
   padding:1rem;
   border:.1rem solid rgba(0,0,0,.1);
@@ -39,8 +32,7 @@
   color:#333;
   text-transform: none;
 }
-
-.book .row form .inputBox h3{
+.form-container form .info h3{
   font-size: 2rem;
   padding:1rem 0;
   color:#666;
