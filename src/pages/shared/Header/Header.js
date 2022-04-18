@@ -2,8 +2,17 @@ import React from 'react';
 import './Header.css';
 
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+  const [user]  =useAuthState(auth);
+
+  const handleSignOut = () =>{
+    signOut(auth);
+}
+
   return (
     <div>
       <header className='header'>
@@ -16,7 +25,7 @@ const Header = () => {
           <div className='nav__menu'>
             <ul className='nav__list'>
               <li className='nav__item'>
-              <Link to="/home">Home</Link>
+                <Link to='/home'>Home</Link>
               </li>
               <li className='nav__item'>
                 <a href='#place' className='nav__link'>
@@ -24,14 +33,22 @@ const Header = () => {
                 </a>
               </li>
               <li className='nav__item'>
-                <Link to="/about">About</Link>
+                <Link to='/about'>About</Link>
               </li>
               <li className='nav__item'>
-              <Link to="/blog">Blog</Link>
+                <Link to='/blog'>Blog</Link>
               </li>
-              <li className='nav__item'>
-              <Link to="/login">Login</Link>
+              {
+                user?
+                <>
+                <li className='nav__item' onClick={handleSignOut}>
+                <Link to='/login'>Log out</Link>
               </li>
+                </>:
+                <li className='nav__item'>
+                <Link to='/login'>Login</Link>
+              </li>
+              }
             </ul>
           </div>
         </nav>
